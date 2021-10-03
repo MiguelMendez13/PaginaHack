@@ -6,12 +6,31 @@
 		echo strval($_POST["Edad"])."<br>";
 		echo strval($_POST["Sexo"])."<br>";
 		echo strval($_POST["Municipio"]);
-		echo strval($_POST["EnfermedadTabaquismo"])."<br>";
-		echo strval($_POST["EnfermedadObesidad"])."<br>";
-		echo strval($_POST["EnfermedadCardiovascular"])."<br>";
-		echo strval($_POST["EnfermedadHipertension"])."<br>";
-		echo strval($_POST["EnfermedadEpoc"])."<br>";
-		echo strval($_POST["EnfermedadDiabetes"])."<br>";
+
+		$enfermedades=[];
+		if(isset($_POST["EnfermedadTabaquismo"])){
+			$enfermedades[]="Tabaquismo";
+		}
+		if(isset($_POST["EnfermedadObesidad"])){
+			$enfermedades[]="Obesidad";
+		}
+		if(isset($_POST["EnfermedadCardiovascular"])){
+			$enfermedades[]="Cardiovascular";
+		}
+		if(isset($_POST["EnfermedadHipertension"])){
+			$enfermedades[]="Hipertension";
+		}
+		if(isset($_POST["EnfermedadEpoc"])){
+			$enfermedades[]="Epoc";
+		}
+		if(isset($_POST["EnfermedadDiabetes"])){
+			$enfermedades[]="Diabetis";
+		}
+		echo "enfermedades<br>";
+		foreach ($enfermedades as $valor) {
+			echo $valor."<br>";
+		}
+		
 
 
 
