@@ -1,6 +1,6 @@
 <?php
 
-	if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Municipio"]) and isset($_POST["Edad"]) and isset($_POST["Sexo"]) and $_POST["Sexo"]!="Sexo" ){
+	if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Municipio"]) and isset($_POST["Edad"]) and isset($_POST["Sexo"]) and $_POST["Sexo"]!="Sexo" and $_POST["Edad"]>=0){
 		echo strval($_POST["Estado"])."<br>";
 		echo strval($_POST["Municipio"])."<br>";
 		echo strval($_POST["Edad"])."<br>";
@@ -100,7 +100,7 @@
 					Campeche
 				</option>
 				<option value="5">
-					Coahuila de Zaragoza
+					Coahuila
 				</option>
 				<option value="6">
 					Colima
@@ -130,10 +130,10 @@
 					Jalisco
 				</option>
 				<option value="15">
-					México
+					Mexico
 				</option>
 				<option value="16">
-					Michoacán de Ocampo
+					Michoacan
 				</option>
 				<option value="17">
 					Morelos
@@ -142,7 +142,7 @@
 					Nayarit
 				</option>
 				<option value="19">
-					Nuevo León
+					Nuevo Leon
 				</option>
 				<option value="20">
 					Oaxaca
@@ -151,13 +151,13 @@
 					Puebla
 				</option>
 				<option value="22">
-					Querétaro
+					Queretaro
 				</option>
 				<option value="23">
 					Quintana Roo
 				</option>
 				<option value="24">
-					San Luis Potosí
+					San Luis Potosi
 				</option>
 				<option value="25">
 					Sinaloa
@@ -175,7 +175,7 @@
 					Tlaxcala
 				</option>
 				<option value="30">
-					Veracruz de Ignacio de la Llave
+					Veracruz
 				</option>
 				<option value="31">
 					Yucatán
