@@ -1,4 +1,18 @@
 <?php
+	if(isset($_POST["EstadoSeleccionado"]) and isset($_POST["EstadoTexto"])){
+		$fp = fopen("MUNICIPIOSTEXT.JSON", "r");
+		$linea="";
+		while (!feof($fp)){
+			$linea = $linea.fgets($fp);
+			#echo $linea;
+		}
+		fclose($fp);
+		$ListaMuni=json_decode($linea);
+		//var_dump($ListaMuni);
+		echo $ListaMuni->{$_POST["EstadoTexto"]}[1];
+	}
+
+
 	if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Municipio"]) and isset($_POST["Edad"]) and isset($_POST["Sexo"]) and $_POST["Sexo"]!="Sexo" ){
 		echo strval($_POST["Estado"])."<br>";
 		echo strval($_POST["Municipio"])."<br>";
