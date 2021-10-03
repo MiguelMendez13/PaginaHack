@@ -2,14 +2,6 @@
 //echo $_POST["EstadoSeleccionado"];
 //echo $_POST["EstadoTexto"];
 $json1="";
-$jsonREs=array(
-    "clave1"  => "valor1",
-    "clave2"  => "valor2",
-    "clave3"  => "valor3",
-    "clave4"  => "valor4",
-);
-
-
 
     $fp = fopen("MUNICIPIOSTEXT.JSON", "r");
 	$linea="";

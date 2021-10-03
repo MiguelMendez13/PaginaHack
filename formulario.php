@@ -1,13 +1,12 @@
 <?php
-
 	if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Municipio"]) and isset($_POST["Edad"]) and isset($_POST["Sexo"]) and $_POST["Sexo"]!="Sexo" and $_POST["Edad"]>=0){
 		
-		echo strval($_POST["Estado"])."<br>";
-		echo strval($_POST["Municipio"])."<br>";
-		echo strval($_POST["Edad"])."<br>";
-		echo strval($_POST["Sexo"])."<br>";
-		echo strval($_POST["Municipio"]);
+		$estado=$_POST["Estado"];
+		$municipio=$_POST["Municipio"];
+		$edad=$_POST["Edad"];
+		$sexo=$_POST["Sexo"];
 		$enfermedades=[];
+		$enfermedadStr="";
 		$embarazo="2";
 		if(isset($_POST["EnfermedadTabaquismo"])){
 			$enfermedades[]="Tabaquismo";
@@ -29,7 +28,7 @@
 		}
 		echo "enfermedades<br>";
 		foreach ($enfermedades as $valor) {
-			echo $valor."<br>";
+			$enfermedadStr=$valor."1".$enfermedadStr;
 		}
 		if(isset($_POST["embarazo"]) and $_POST["embarazo"]=="1"){
 			$embarazo="1";
@@ -48,6 +47,15 @@
 		$ListaMuni=json_decode($linea);
 		//var_dump($ListaMuni);
 		//echo $ListaMuni->{"AGUASCALIENTES"}[1];
+
+		$estado;
+		$municipio;
+		$edad;
+		$sexo;
+		$enfermedades;
+		$embarazo;
+		$urlRedirec="graficas/index.php?estado=".$estado."&municipio=".$municipio."&edad=".$edad."&sexo=".$sexo."&enfermedades=".$enfermedadStr."&embarazo=".$embarazo;
+		header('Location: '.$urlRedirec);
 	}
 	else{
 		echo "Verifica tus Datos";

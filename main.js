@@ -35,7 +35,6 @@ function CambiarMunicipios(){
 	form.append("EstadoSeleccionado",EstadoSel);
     form.append("EstadoTexto",Texto);
 
-	//urlop="#"
 
     console.log(form.get("EstadoTexto"));
     urlop="peticionesEstado.php"
