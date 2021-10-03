@@ -1,17 +1,29 @@
 <?php
-if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Municipio"]) and isset($_POST["Edad"]) and isset($_POST["Sexo"]) ){
-	echo $_POST["Estado"];
-	echo $_POST["Municipio"];
-	echo $_POST["Edad"];
-	echo $_POST["Sexo"];
-}
+	if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Municipio"]) and isset($_POST["Edad"]) and isset($_POST["Sexo"]) and $_POST["Sexo"]!="Sexo" ){
+		echo strval($_POST["Estado"])."<br>";
+		echo strval($_POST["Municipio"])."<br>";
+		echo strval($_POST["Edad"])."<br>";
+		echo strval($_POST["Sexo"])."<br>";
+		
+		//$fp = fopen("municipios.json", "r");
+		$fp = fopen("MUNICIPIOSTEXT.JSON", "r");
+		$linea="";
+		while (!feof($fp)){
+			$linea = $linea.fgets($fp);
+			#echo $linea;
+		}
+		fclose($fp);
+		$ListaMuni=json_decode($linea);
+		//var_dump($ListaMuni);
+		echo $ListaMun->{"AGUASCALIENTES"}
+	}
+	else{
+		echo "Verifica tus Datos";
+	}
 
 #<input class="datos" type="text" name="CodigoPostal" id="codigopostal" placeholder="Ingrese su codigo postal">
 
-/*	<option>Sexo</option>
-	<option value="masculino">Masculino</option>
-	<option value="femenino">Femenino</option>
-</select>*/
+
 
 
 ?>
@@ -144,7 +156,7 @@ if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Muni
 			</select>
 			<input class="datos" type="text" name="Municipio" id="municipio" placeholder="Ingrese su municipio">
 			<input class="datos" type="text" name="CodigoPostal" id="codigopostal" placeholder="Ingrese su codigo postal">
-			<input class="datos" type="text" name="Edad" id="edad" placeholder="Ingrese su edad">
+			<input class="datos" type="number" name="Edad" id="edad" placeholder="Ingrese su edad">
 			<select class="datos" type="text" name="Sexo" id="sexo" placeholder="Sexo">
 				<option>Sexo</option>
 				<option value="masculino">Masculino</option>
@@ -171,3 +183,6 @@ if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Muni
 	<script src="main.js"></script>
 </body>
 </html>
+
+
+
