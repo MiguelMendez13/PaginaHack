@@ -37,9 +37,6 @@
 
 		echo "Embarazo: ".$embarazo;
 
-
-
-		
 		//$fp = fopen("municipios.json", "r");
 		$fp = fopen("MUNICIPIOSTEXT.JSON", "r");
 		$linea="";
