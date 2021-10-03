@@ -1,5 +1,5 @@
 <?php
-	if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Municipio"]) and isset($_POST["Edad"]) and isset($_POST["Sexo"]) and $_POST["Sexo"]!="Sexo" and $_POST["Edad"]>=0){
+	if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Municipio"]) and isset($_POST["Edad"]) and isset($_POST["Sexo"]) and $_POST["Sexo"]!="Sexo" and $_POST["Edad"]>=0 and $_POST["Edad"]<=120){
 		
 		$estado=$_POST["Estado"];
 		$municipio=$_POST["Municipio"];
@@ -218,6 +218,7 @@
 	</section>
 </form>
 	<span id="Resultado"></span>
+	
 </body>
 </html>
 
