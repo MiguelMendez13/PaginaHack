@@ -1,23 +1,22 @@
 <?php
-	if(isset($_POST["EstadoSeleccionado"]) and isset($_POST["EstadoTexto"])){
-		$fp = fopen("MUNICIPIOSTEXT.JSON", "r");
-		$linea="";
-		while (!feof($fp)){
-			$linea = $linea.fgets($fp);
-			#echo $linea;
-		}
-		fclose($fp);
-		$ListaMuni=json_decode($linea);
-		//var_dump($ListaMuni);
-		echo $ListaMuni->{$_POST["EstadoTexto"]}[1];
-	}
-
 
 	if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Municipio"]) and isset($_POST["Edad"]) and isset($_POST["Sexo"]) and $_POST["Sexo"]!="Sexo" ){
 		echo strval($_POST["Estado"])."<br>";
 		echo strval($_POST["Municipio"])."<br>";
 		echo strval($_POST["Edad"])."<br>";
 		echo strval($_POST["Sexo"])."<br>";
+		echo strval($_POST["Municipio"]);
+		echo strval($_POST["EnfermedadTabaquismo"])."<br>";
+		echo strval($_POST["EnfermedadObesidad"])."<br>";
+		echo strval($_POST["EnfermedadCardiovascular"])."<br>";
+		echo strval($_POST["EnfermedadHipertension"])."<br>";
+		echo strval($_POST["EnfermedadEpoc"])."<br>";
+		echo strval($_POST["EnfermedadDiabetes"])."<br>";
+
+
+
+
+
 		
 		//$fp = fopen("municipios.json", "r");
 		$fp = fopen("MUNICIPIOSTEXT.JSON", "r");
@@ -29,16 +28,11 @@
 		fclose($fp);
 		$ListaMuni=json_decode($linea);
 		//var_dump($ListaMuni);
-		echo $ListaMuni->{"AGUASCALIENTES"}[1];
+		//echo $ListaMuni->{"AGUASCALIENTES"}[1];
 	}
 	else{
 		echo "Verifica tus Datos";
 	}
-
-#<input class="datos" type="text" name="CodigoPostal" id="codigopostal" placeholder="Ingrese su codigo postal">
-
-
-
 
 ?>
 
@@ -171,7 +165,7 @@
 					Zacatecas
 				</option>
 			</select>
-			<input class="datos" type="text" name="Municipio" id="municipio" placeholder="Ingrese su municipio">
+			<select class="datos" type="text" name="Municipio" id="municipio" placeholder="Ingrese su municipio">
 			<input class="datos" type="text" name="CodigoPostal" id="codigopostal" placeholder="Ingrese su codigo postal">
 			<input class="datos" type="number" name="Edad" id="edad" placeholder="Ingrese su edad">
 			<select class="datos" type="text" name="Sexo" id="sexo" placeholder="Sexo">
@@ -181,12 +175,12 @@
 			</select>
 			<ul class="ul">
 				<li class="text-list">Presentas alguna de estas enfermedades:</li>
-				<li><input class="checkbox" type="checkbox" name="Enfermedad" id="tabaquismo"> Tabaquismo</li>
-				<li><input class="checkbox" type="checkbox" name="Enfermedad" id="obesidad"> Obesidad</li>
-				<li><input class="checkbox" type="checkbox" name="Enfermedad" id="cardiovascular"> Cardiovascular</li>
-				<li><input class="checkbox" type="checkbox" name="Enfermedad" id="hipertension"> Hipertensión</li>
-				<li><input class="checkbox" type="checkbox" name="Enfermedad" id="epoc"> Epoc</li>
-				<li><input class="checkbox" type="checkbox" name="Enfermedad" id="diabetes"> Diabetes</li>
+				<li><input class="checkbox" type="checkbox" name="EnfermedadTabaquismo" id="tabaquismo"> Tabaquismo</li>
+				<li><input class="checkbox" type="checkbox" name="EnfermedadObesidad" id="obesidad"> Obesidad</li>
+				<li><input class="checkbox" type="checkbox" name="EnfermedadCardiovascular" id="cardiovascular"> Cardiovascular</li>
+				<li><input class="checkbox" type="checkbox" name="EnfermedadHipertension" id="hipertension"> Hipertensión</li>
+				<li><input class="checkbox" type="checkbox" name="EnfermedadEpoc" id="epoc"> Epoc</li>
+				<li><input class="checkbox" type="checkbox" name="EnfermedadDiabetes" id="diabetes"> Diabetes</li>
 			</ul>
 			<select class="datos" type="text" name="embarazo" id="sexo" placeholder="">
 				<option>¿Esta embarazada?</option>
