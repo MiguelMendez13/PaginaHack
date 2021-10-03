@@ -13,3 +13,12 @@ window.addEventListener('click',e=>{
         menu.classList.toggle("show-menu")
     }
 })
+
+
+
+function CambiarMunicipios(){
+    let Estado = document.getElementById("estado");
+    let EstadoSel= Estado.value
+    let res= document.getElementById("Resultado")
+    res.innerHTML = EstadoSel
+}

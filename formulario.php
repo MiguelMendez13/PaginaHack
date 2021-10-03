@@ -15,7 +15,7 @@
 		fclose($fp);
 		$ListaMuni=json_decode($linea);
 		//var_dump($ListaMuni);
-		echo $ListaMun->{"AGUASCALIENTES"}
+		echo $ListaMuni->{"AGUASCALIENTES"}[1];
 	}
 	else{
 		echo "Verifica tus Datos";
@@ -37,6 +37,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<title>Document</title>
+
+	<script src="main.js"></script>
+
 </head>
 <body>
 	<header id="home">
@@ -55,7 +58,7 @@
 	<section class="content-formulario" id="formulario">
 		<div class="content inputs">
 			<h3>Calcular riesgo</h3>
-			<select class="datos" type="text" name="Estado" id="estado" placeholder="Ingrese su estado" rows="32">
+			<select class="datos" type="text" name="Estado" id="estado" placeholder="Ingrese su estado" rows="32" onChange="CambiarMunicipios()">
 				<option class="inputs">Estado</option>
 				<option value="1">
 					Aguascalientes
@@ -64,7 +67,7 @@
 					Baja california
 				</option>
 				<option value="3">
-					Baja Californi Sur
+					Baja California Sur
 				</option>
 				<option value="4">
 					Campeche
@@ -180,7 +183,7 @@
 		</div>
 	</section>
 </form>
-	<script src="main.js"></script>
+	<span id="Resultado"></span>
 </body>
 </html>
 
