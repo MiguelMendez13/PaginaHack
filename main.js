@@ -1,5 +1,5 @@
 /*menu*/
-
+window.onload = load;
 const hamburguer = document.querySelector('.menu-icon');
 const menu = document.querySelector('.menu');
 
@@ -61,3 +61,22 @@ function CambiarMunicipios(){
 
 
 }
+
+
+function CambiarEmbarazo(){
+    if (document.getElementById("sexo").value=="masculino"){
+        console.log(document.getElementById("sexo").value)
+        $embarazo=document.getElementById("embarazo").disabled=true;
+    }
+    else if (document.getElementById("sexo").value=="femenino"){
+        console.log(document.getElementById("sexo").value)
+        $embarazo=document.getElementById("embarazo").disabled=false;
+    }
+    else if (document.getElementById("sexo").value=="Sexo"){
+        console.log(document.getElementById("sexo").value)
+        $embarazo=document.getElementById("embarazo").disabled=true;
+    }
+}
+function load() {
+    $embarazo=document.getElementById("embarazo").disabled=true;
+  }

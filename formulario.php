@@ -1,13 +1,14 @@
 <?php
 
 	if(isset($_POST["Estado"]) and $_POST["Estado"]!="Estado" and isset($_POST["Municipio"]) and isset($_POST["Edad"]) and isset($_POST["Sexo"]) and $_POST["Sexo"]!="Sexo" and $_POST["Edad"]>=0){
+		
 		echo strval($_POST["Estado"])."<br>";
 		echo strval($_POST["Municipio"])."<br>";
 		echo strval($_POST["Edad"])."<br>";
 		echo strval($_POST["Sexo"])."<br>";
 		echo strval($_POST["Municipio"]);
-
 		$enfermedades=[];
+		$embarazo="2";
 		if(isset($_POST["EnfermedadTabaquismo"])){
 			$enfermedades[]="Tabaquismo";
 		}
@@ -30,9 +31,11 @@
 		foreach ($enfermedades as $valor) {
 			echo $valor."<br>";
 		}
-		
+		if(isset($_POST["embarazo"]) and $_POST["embarazo"]=="1"){
+			$embarazo="1";
+		}
 
-
+		echo "Embarazo: ".$embarazo;
 
 
 
@@ -185,9 +188,8 @@
 				</option>
 			</select>
 			<select class="datos" type="text" name="Municipio" id="municipio" placeholder="Ingrese su municipio">
-			<input class="datos" type="text" name="CodigoPostal" id="codigopostal" placeholder="Ingrese su codigo postal">
 			<input class="datos" type="number" name="Edad" id="edad" placeholder="Ingrese su edad">
-			<select class="datos" type="text" name="Sexo" id="sexo" placeholder="Sexo">
+			<select class="datos" type="text" name="Sexo" id="sexo" placeholder="Sexo" onChange="CambiarEmbarazo()">
 				<option>Sexo</option>
 				<option value="masculino">Masculino</option>
 				<option value="femenino">Femenino</option>
@@ -201,7 +203,7 @@
 				<li><input class="checkbox" type="checkbox" name="EnfermedadEpoc" id="epoc"> Epoc</li>
 				<li><input class="checkbox" type="checkbox" name="EnfermedadDiabetes" id="diabetes"> Diabetes</li>
 			</ul>
-			<select class="datos" type="text" name="embarazo" id="sexo" placeholder="">
+			<select class="datos" type="text" name="embarazo" id="embarazo" placeholder="" >
 				<option>¿Esta embarazada?</option>
 				<option value="1">Si</option>
 				<option value="2">No</option>
