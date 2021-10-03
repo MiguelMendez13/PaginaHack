@@ -1,3 +1,13 @@
+<?php
+if(isset($_POST["Estado"])){
+    echo "Error";
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,106 +30,106 @@
             <h1 class="title">COVID-19: Calculate the Risk</h1>
         </div>  
 </header>
-
+<form method="post" action="#">
     <section class="content-formulario" id="formulario">
         <div class="content inputs">
             <h3>Calcular riesgo</h3>
             <select class="datos" type="text" name="Estado" id="estado" placeholder="Ingrese su estado" rows="32">
                 <option class="inputs">Estado</option>
-                <option value="Aguascalientes">
+                <option value="1">
                     Aguascalientes
                 </option>
-                <option value="Baja california">
+                <option value="2">
                     Baja california
                 </option>
-                <option value="Baja Californi Sur">
+                <option value="3">
                     Baja Californi Sur
                 </option>
-                <option value="Campeche">
+                <option value="4">
                     Campeche
                 </option>
-                <option value="Coahuila de Zaragoza">
+                <option value="5">
                     Coahuila de Zaragoza
                 </option>
-                <option value="Colima">
+                <option value="6">
                     Colima
                 </option>
-                <option value="Chiapas">
+                <option value="7">
                     Chiapas
                 </option>
-                <option value="Chihuahua">
+                <option value="8">
                     Chihuahua
                 </option>
-                <option value="Ciudad de Mexico">
+                <option value="9">
                     Ciudad de Mexico
                 </option>
-                <option value="Durango">
+                <option value="10">
                     Durango
                 </option>
-                <option value="Guanajuato">
+                <option value="11">
                     Guanajuato
                 </option>
-                <option value="Guerrero">
+                <option value="12">
                     Guerrero
                 </option>
-                <option value="Hidalgo">
+                <option value="13">
                     Hidalgo
                 </option>
-                <option value="Jalisco">
+                <option value="14">
                     Jalisco
                 </option>
-                <option value="México">
+                <option value="15">
                     México
                 </option>
-                <option value="Michoacan de Ocampo">
+                <option value="16">
                     Michoacán de Ocampo
                 </option>
-                <option value="Morelos">
+                <option value="17">
                     Morelos
                 </option>
-                <option value="Nayarit">
+                <option value="18">
                     Nayarit
                 </option>
-                <option value="	Nuevo Leon">
+                <option value="19">
                     Nuevo León
                 </option>
-                <option value="Oaxaca">
+                <option value="20">
                     Oaxaca
                 </option>
-                <option value="Puebla">
+                <option value="21">
                     Puebla
                 </option>
-                <option value="Queretaro">
+                <option value="22">
                     Querétaro
                 </option>
-                <option value="	Quintana Roo">
+                <option value="23">
                     Quintana Roo
                 </option>
-                <option value="San Luis Potosí">
+                <option value="24">
                     San Luis Potosí
                 </option>
-                <option value="	Sinaloa">
+                <option value="25">
                     Sinaloa
                 </option>
-                <option value="Sonora">
+                <option value="26">
                     Sonora
                 </option>
-                <option value="Tabasco">
+                <option value="27">
                     Tabasco
                 </option>
-                <option value="Tamaulipas">
+                <option value="28">
                     Tamaulipas
                 </option>
-                <option value="Tlaxcala">
+                <option value="29">
                     Tlaxcala
                 </option>
-                <option value="Veracruz de Ignacio de la Llave">
+                <option value="30">
                     Veracruz de Ignacio de la Llave
                 </option>
-                <option value="Yucatán">
+                <option value="31">
                     Yucatán
                 </option>
-                <option value="Zacatecas">
+                <option value="32">
                     Zacatecas
                 </option>
             </select>
@@ -148,7 +158,7 @@
             <input class="boton" type="submit" value="Calcular">
         </div>
     </section>
-
+</form>
     <script src="main.js"></script>
 </body>
 </html>
