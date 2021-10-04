@@ -327,3 +327,150 @@ function GraficaEnfermedades(enfermedad,datos){
 }
 
 /*Recibe el estado a graficar */
+
+function Diabetes(){
+	let pmDiabetes = document.getElementById("pmDiabetes").getContext("2d");
+	let datosPmDiabetes = [24779, 447491];
+	
+	var char = new Chart(pmDiabetes,{
+		type: "bar",
+		data:{
+			labels: ["Fallecido","Vivo"],
+			datasets:[{
+				label:"Porcentaje de muerte COVID de personas con diabetes",
+				backgroundColor:"rgb(145,215,165)",
+				borderColor:"rgb(200,225,195)",
+				data:datosPmDiabetes
+			}]
+		}
+	})
+	}
+	
+	/*grafica %muertes hipertension */
+	function Hipertension(){
+	let pmHipert = document.getElementById("pmHipert").getContext("2d");
+	let datospmHipert = [28792, 635523];
+	
+	var char = new Chart(pmHipert,{
+		type: "bar",
+		data:{
+			labels: ["Fallecido","Vivo"],
+			datasets:[{
+				label:"Porcentaje de muerte COVID de personas con hipertension",
+				backgroundColor:"rgb(145,215,165)",
+				borderColor:"rgb(200,225,195)",
+				data:datospmHipert
+			}]
+		}
+	})
+	
+	}
+	/*grafica %muertes cardiovasculares */
+	function Cardiovascular(){
+	let pmCardio = document.getElementById("pmCardio").getContext("2d");
+	let datospmCardio = [5255, 62850];
+	
+	var char = new Chart(pmCardio,{
+		type: "bar",
+		data:{
+			labels: ["Fallecido","Vivo"],
+			datasets:[{
+				label:"Porcentaje de muerte COVID de personas con emfermedades cardiovasculares",
+				backgroundColor:"rgb(145,215,165)",
+				borderColor:"rgb(200,225,195)",
+				data:datospmCardio
+			}]
+		}
+	})
+	}
+	/*grafica %muertes obesidad */
+	function Obesidad(){
+	let pmObses = document.getElementById("pmObses").getContext("2d");
+	let datospmObses = [6383, 498810];
+	
+	var char = new Chart(pmObses,{
+		type: "bar",
+		data:{
+			labels: ["Fallecido","Vivo"],
+			datasets:[{
+				label:"Porcentaje de muerte COVID de personas con Obesidad",
+				backgroundColor:"rgb(145,215,165)",
+				borderColor:"rgb(200,225,195)",
+				data:datospmObses
+			}]
+		}
+	})
+	}
+	
+	/*grafica %muertes epoc */
+	function Epoc(){
+	let pmEpoc = document.getElementById("pmEpoc").getContext("2d");
+	let datospmEpoc= [1180, 144476];
+	
+	var char = new Chart(pmEpoc,{
+		type: "bar",
+		data:{
+			labels: ["Fallecido","Vivo"],
+			datasets:[{
+				label:"Porcentaje de muerte COVID de personas con epoc",
+				backgroundColor:"rgb(145,215,165)",
+				borderColor:"rgb(200,225,195)",
+				data:datospmEpoc
+			}]
+		}
+	})
+	}
+	/*grafica %muertes asma */
+	
+	/*let pmAsma = document.getElementById("pmAsma").getContext("2d");
+	let datospmAsma= [1180, 144476];
+	
+	var char = new Chart(pmAsma,{
+		type: "bar",
+		data:{
+			labels: ["Fallecido","Vivo"],
+			datasets:[{
+				label:"Porcentaje de muerte COVID de personas con asma",
+				backgroundColor:"rgb(145,215,165)",
+				borderColor:"rgb(200,225,195)",
+				data:datospmAsma
+			}]
+		}
+	})/*
+	
+	/*grafica %muertes embarazo */
+
+	function Embarazo(){
+	let pmEmb = document.getElementById("pmEmb").getContext("2d");
+	let datospmEmb= [88, 66129];
+	
+	var char = new Chart(pmEmb,{
+		type: "bar",
+		data:{
+			labels: ["Fallecido","Vivo"],
+			datasets:[{
+				label:"Porcentaje de muerte COVID de personas con embarazo",
+				backgroundColor:"rgb(145,215,165)",
+				borderColor:"rgb(200,225,195)",
+				data:datospmEmb
+			}]
+		}
+	})
+	}
+
+	function Tabaquismo(){
+let tabaquismo = document.getElementById("pmTab").getContext("2d");
+let datosTabaquismo = [270135, 3820722];
+
+var char = new Chart(tabaquismo,{
+	type: "bar",
+	data:{
+		labels: ["Si","No"],
+		datasets:[{
+			label:"Tabaquismo",
+			backgroundColor:"rgb(145,215,165)",
+			borderColor:"rgb(200,225,195)",
+			data:datosTabaquismo
+		}]
+	}
+})}

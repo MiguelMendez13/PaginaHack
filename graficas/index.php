@@ -57,6 +57,10 @@ $ListaDeEstados=[
 /*foreach ($_GET as $valor) {
 	echo$valor."<br>";
 }*/
+
+
+
+
 $estado=intval($_GET["estado"]);
 $municipio=$_GET["municipio"];
 $RiesgoEdad="";
@@ -74,7 +78,7 @@ else if($edad>=51){
 }
 $sexo=$_GET["sexo"];
 $enfermedades=$_GET["enfermedades"];
-$embarazo=$_GET["embarazo"];
+$embarazo=intval($_GET["embarazo"]);
 $EstadoElegidoText=strtoupper($ListaDeEstados[$estado]);
 $EstadoElegidoText2=str_replace(" ","",$EstadoElegidoText);
 /*echo "estado:";
@@ -93,6 +97,17 @@ foreach($muniEstados as $municipi){
 	$EstadosCadena=$EstadosCadena.$municipi."1";
 }
 /*echo $EstadosCadena;*/
+
+$num=0;
+$Graficar=explode("1",$enfermedades);
+if($embarazo==1){
+	$Graficar[count($Graficar)-1]="Embarazo";
+}
+else if($embarazo==2){
+	$Graficar[count($Graficar)-1]="No Embarazo";
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,9 +130,82 @@ foreach($muniEstados as $municipi){
 
 <div id="EdadText">Tu edad: <?php echo $edad.$RiesgoEdad; ?></div>
 <div class="container graphic-age" ><canvas id="Edad" width="100" height="75"></canvas></div>
+<?php
+foreach($Graficar as $gra){
+	echo $gra;
+	if($gra == "Diabetes"){
+		echo'<div class="container graphic-pmDiabetes" ><canvas id="pmDiabetes" width="100" height="75"></canvas></div>';
+	}
+	
+	else if($gra == "Epoc"){
+		echo '	<div class="container graphic-pmEpoc" ><canvas id="pmEpoc" width="100" height="75"></canvas></div>  ';
+	}
+
+	else if($gra == "Hipertension"){
+		echo '<div class="container graphic-pmHipert" ><canvas id="pmHipert" width="100" height="75"></canvas></div>';
+	}
+
+	else if($gra == "Cardiovascular"){
+		echo '	<div class="container graphic-pmCardio" ><canvas id="pmCardio" width="100" height="75"></canvas></div>';
+	}
+
+	else if($gra == "Obesidad"){
+		echo '<div class="container graphic-pmObses" ><canvas id="pmObses" width="100" height="75"></canvas></div> ';
+	}
+
+	else if($gra == "Tabaquismo"){
+		echo'<div class="container graphic-pmTab" ><canvas id="pmTab" width="100" height="75"></canvas></div> ';
+	}
+
+	else if($gra == "Embarazo"){
+		echo'<div class="container graphic-pmEmb" ><canvas id="pmEmb" width="100" height="75"></canvas></div>';
+	}
+
+}
+?>
+
+
+
+
+
+
+
 </section>
 </body>
 <script src="graficas.js"></script>
 <script>estado_Municipio(<?php echo $estado.",'".$EstadosCadena."'";?>)</script>
 <script>GraficasEdades()</script>
+
+<?php
+foreach($Graficar as $gra){
+	if($gra == "Diabetes"){
+		echo("<script>".$gra."()</script>");
+	}
+	
+	else if($gra == "Epoc"){
+		echo("<script>".$gra."()</script>");
+	}
+
+	else if($gra == "Hipertension"){
+		echo("<script>".$gra."()</script>");
+	}
+
+	else if($gra == "Cardiovascular"){
+		echo("<script>".$gra."()</script>");
+	}
+
+	else if($gra == "Obesidad"){
+		echo("<script>".$gra."()</script>");
+	}
+
+	else if($gra == "Tabaquismo"){
+		echo("<script>".$gra."()</script>");
+	}
+
+	else if($gra == "Embarazo"){
+		echo("<script>".$gra."()</script>");
+	}
+}
+?>
+
 </html>
